@@ -1,12 +1,12 @@
 package Strategy;
-import Hero.Hero
+import Hero.Hero;
 public class Melee implements Attack{
     @Override
     public int calculate (Hero attacker, Hero target){
-        int power =attacker.getPower;
+        int power =attacker.getPower();
         int bonus =attacker.getWeapon().bonus();
         int defense =target.getDefense();
-        int damage = power + bonus - defense;
+        int damage = (int) ((power + bonus) * 1.3) - defense;
         return Math.max(0, damage);
     }
     @Override

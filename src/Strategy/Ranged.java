@@ -1,13 +1,12 @@
 package Strategy;
-import Hero.Hero
+import Hero.Hero;
 public class Ranged implements Attack{
     @Override
     public int calculate (Hero attacker, Hero target){
-        int power =attacker.getPower;
+        int power =attacker.getPower();
         int bonus =attacker.getWeapon().bonus();
         int defense =target.getDefense();
-        int raw = power + bonus;
-        int damage = (int) (raw * 0.9) -defense;
+        int damage = (int) ((power + bonus) * 1.1) - defense;
         return Math.max(0, damage);
     }
     @Override
